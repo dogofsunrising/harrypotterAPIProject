@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct ContentView: View {
+struct LaunchView: View {
     var body: some View {
         VStack {
             Button(action: {
