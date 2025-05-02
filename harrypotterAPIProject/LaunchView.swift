@@ -7,10 +7,12 @@
 import SwiftUI
 
 struct LaunchView: View {
+    @Binding var router:Router
+    
     var body: some View {
         VStack {
             Button(action: {
-                print("start")
+                router = .camera
             }, label: {
                 Text("start")
                     .bold()
