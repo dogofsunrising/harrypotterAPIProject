@@ -17,9 +17,22 @@
 		5435F6CA2DC4A964003C51EE /* CameraKitDemo-Objc.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "CameraKitDemo-Objc.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5435F7BD2DC4AE65003C51EE /* Exceptions for "harrypotterAPIProject" folder in "harrypotterAPIProject" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5435F6782DC483A0003C51EE /* harrypotterAPIProject */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5435F67B2DC483A0003C51EE /* harrypotterAPIProject */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5435F7BD2DC4AE65003C51EE /* Exceptions for "harrypotterAPIProject" folder in "harrypotterAPIProject" target */,
+			);
 			path = harrypotterAPIProject;
 			sourceTree = "<group>";
 		};
@@ -303,6 +316,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = harrypotterAPIProject/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -333,6 +347,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = harrypotterAPIProject/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
