@@ -12,6 +12,9 @@
 
 /* Begin PBXFileReference section */
 		5435F6792DC483A0003C51EE /* harrypotterAPIProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harrypotterAPIProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5435F6AF2DC4A964003C51EE /* CameraKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CameraKit.xcodeproj; sourceTree = "<group>"; };
+		5435F6BC2DC4A964003C51EE /* CameraKitDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CameraKitDemo.xcodeproj; sourceTree = "<group>"; };
+		5435F6CA2DC4A964003C51EE /* CameraKitDemo-Objc.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "CameraKitDemo-Objc.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -46,6 +49,27 @@
 			isa = PBXGroup;
 			children = (
 				5435F6792DC483A0003C51EE /* harrypotterAPIProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5435F6D32DC4A964003C51EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5435F6D52DC4A964003C51EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5435F6D72DC4A964003C51EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +130,20 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5435F67A2DC483A0003C51EE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5435F6D52DC4A964003C51EE /* Products */;
+					ProjectRef = 5435F6AF2DC4A964003C51EE /* CameraKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 5435F6D72DC4A964003C51EE /* Products */;
+					ProjectRef = 5435F6CA2DC4A964003C51EE /* CameraKitDemo-Objc.xcodeproj */;
+				},
+				{
+					ProductGroup = 5435F6D32DC4A964003C51EE /* Products */;
+					ProjectRef = 5435F6BC2DC4A964003C51EE /* CameraKitDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5435F6782DC483A0003C51EE /* harrypotterAPIProject */,
