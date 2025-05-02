@@ -4,21 +4,18 @@
 //
 //  Created by 藤本皇汰 on 2025/05/02.
 //
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globei")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button(action: {
+                print("start")
+            }, label: {
+                Text("start")
+                    .bold()
+                    .font(.title)
+            })
         }
-        .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
