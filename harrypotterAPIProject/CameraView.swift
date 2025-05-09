@@ -7,13 +7,6 @@ struct OOCameraView :View {
     @State var image = UIImage()
     var body: some View {
         VStack {
-//            Button(action: {
-//                router = .camera
-//            }, label: {
-//                Text("start")
-//                    .bold()
-//                    .font(.title)
-//            })
             CameraView(image: $image)
         }
     }
