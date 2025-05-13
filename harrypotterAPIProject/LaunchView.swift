@@ -7,7 +7,6 @@
 import SwiftUI
 
 struct LaunchView: View {
-    @StateObject var viewModel = APIViewModel()
     @Binding var router:Router
     var body: some View {
         VStack {
