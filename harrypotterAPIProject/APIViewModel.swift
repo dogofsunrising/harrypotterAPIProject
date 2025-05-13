@@ -46,6 +46,7 @@ class APIViewModel: ObservableObject {
     }
     
     func featuringData(userImage: UIImage?) async -> ResultModel? {
+        
         guard let userImage = userImage,
               let userVector = await extractImageFeatureVector(from: resizedImage(userImage)) else {
             return nil
@@ -127,5 +128,4 @@ class APIViewModel: ObservableObject {
         UIGraphicsEndImageContext()
         return resized ?? image
     }
-
 }
