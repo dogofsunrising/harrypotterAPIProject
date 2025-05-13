@@ -1,11 +1,11 @@
-import Foundation
+import UIKit
 
 @MainActor
 class APIViewModel: ObservableObject {
     @Published var APIisLoaded: Bool = false
     @Published var LocalisLoaded: Bool = false
     
-    @Published var harryList: [HarryPotterModel] = []
+    var harryList: [HarryPotterModel] = []
     @Published var resultList: [ResultModel] = []
     
     func fetchAPI() {
@@ -42,5 +42,9 @@ class APIViewModel: ObservableObject {
         fetchAPI()
         fetchLocalData()
         
+    }
+    
+    func featuringData(userImage:UIImage?) -> ResultModel{
+        return ResultModel(id: UUID().uuidString, harryPotter: sampleHarryPotterModel, userImage: userImage)
     }
 }

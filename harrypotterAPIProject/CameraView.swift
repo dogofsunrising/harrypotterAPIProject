@@ -30,7 +30,7 @@ struct CameraView: UIViewControllerRepresentable {
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let pickedImage = info[.originalImage] as? UIImage {
-                let result = ResultModel(id: UUID().uuidString, harryPotter: sampleHarryPotterModel, userImage: pickedImage)
+                let result = parent.viewModel.featuringData(userImage: pickedImage)
                 LocalService().storeResult(result)
 
                 // ✅ viewModelに反映
