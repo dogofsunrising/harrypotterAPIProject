@@ -18,5 +18,9 @@ struct RouterViews: View {
                 OOCameraView(router: $router)
             }
         }
+        .onAppear{
+            viewModel.fetchAPI()
+            viewModel.fetchLocalData()
+        }
     }
 }

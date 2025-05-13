@@ -1,10 +1,11 @@
 import Foundation
 
+@MainActor
 class APIViewModel: ObservableObject {
     @Published var APIisLoaded: Bool = false
     @Published var LocalisLoaded: Bool = false
     
-    @Published var harryList: [harrypotterModel] = []
+    var harryList: [HarryPotterModel] = []
     func fetchAPI() {
         guard !APIisLoaded else { return } // 2回目以降はスキップ
         APIisLoaded = true
@@ -12,12 +13,10 @@ class APIViewModel: ObservableObject {
         // ここにAPI通信処理を実装
         Task {
             do {
-                
-                let model = try await APIService().request()
-                harryList = model
-               
+                let result = try await APIService().request()
+                harryList = result
             } catch {
-                print("通信エラー: \(error)")
+                print("❌ 通信失敗: \(error)")
             }
         }
     }
