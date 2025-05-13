@@ -45,6 +45,6 @@ class APIViewModel: ObservableObject {
     }
     
     func featuringData(userImage:UIImage?) -> ResultModel{
-        return ResultModel(id: UUID().uuidString, harryPotter: sampleHarryPotterModel, userImage: userImage)
+        return ResultModel(id: UUID().uuidString, harryPotter: sampleHarryPotterModel, userImage: userImage,userFacefeature: nil)
     }
 }
