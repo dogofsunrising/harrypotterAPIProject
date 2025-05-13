@@ -3,6 +3,7 @@ import UIKit
 
 struct CameraView: UIViewControllerRepresentable {
     @Binding var router:Router
+    @Binding var loading:Bool
     @ObservedObject var viewModel: APIViewModel
     @Environment(\.presentationMode) var presentationMode
 
@@ -30,11 +31,18 @@ struct CameraView: UIViewControllerRepresentable {
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let pickedImage = info[.originalImage] as? UIImage {
-                let result = parent.viewModel.featuringData(userImage: pickedImage)
-                LocalService().storeResult(result)
-
-                // ✅ viewModelに反映
-                parent.viewModel.resultList = LocalService().loadResults()
+                Task{
+                    print("類似推定を開始")
+                    parent.loading = true
+                    if let result = await parent.viewModel.featuringData(userImage: pickedImage) {
+                        LocalService().storeResult(result)
+                        // ✅ viewModelに反映
+                        parent.viewModel.resultList = LocalService().loadResults()
+                        parent.loading = false
+                    } else {
+                        print("❌ 類似顔推定に失敗しました")
+                    }
+                }
             }
             parent.presentationMode.wrappedValue.dismiss()
             parent.router = .launch
