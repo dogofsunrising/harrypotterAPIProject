@@ -8,6 +8,7 @@ import SwiftUI
 
 struct LaunchView: View {
     @Binding var router:Router
+    let results:[ResultModel]
     var body: some View {
         VStack {
             Button(action: {
@@ -17,8 +18,7 @@ struct LaunchView: View {
                     .bold()
                     .font(.title)
             })
-            
-            
+            ResultsViews(results: results)
         }
     }
 }
