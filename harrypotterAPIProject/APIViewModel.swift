@@ -4,6 +4,7 @@ class APIViewModel: ObservableObject {
     @Published var APIisLoaded: Bool = false
     @Published var LocalisLoaded: Bool = false
     
+    @Published var harryList: [harrypotterModel] = []
     func fetchAPI() {
         guard !APIisLoaded else { return } // 2回目以降はスキップ
         APIisLoaded = true
@@ -11,9 +12,9 @@ class APIViewModel: ObservableObject {
         // ここにAPI通信処理を実装
         Task {
             do {
-                let url = URL(string: "https://your-api-endpoint.com/spells")!
-                let (data, _) = try await URLSession.shared.data(from: url)
                 
+                let model = try await APIService().request()
+                harryList = model
                
             } catch {
                 print("通信エラー: \(error)")
