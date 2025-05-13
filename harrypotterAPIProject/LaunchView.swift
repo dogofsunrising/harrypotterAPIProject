@@ -13,10 +13,12 @@ struct LaunchView: View {
             Button(action: {
                 router = .camera
             }, label: {
-                Text("start")
+                Text("📷Let`s take a picture!!")
                     .bold()
                     .font(.title)
             })
+            
+            
         }
     }
 }
