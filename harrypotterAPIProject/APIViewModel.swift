@@ -5,7 +5,9 @@ class APIViewModel: ObservableObject {
     @Published var APIisLoaded: Bool = false
     @Published var LocalisLoaded: Bool = false
     
-    var harryList: [HarryPotterModel] = []
+    @Published var harryList: [HarryPotterModel] = []
+    @Published var resultList: [ResultModel] = []
+    
     func fetchAPI() {
         guard !APIisLoaded else { return } // 2回目以降はスキップ
         APIisLoaded = true
@@ -27,7 +29,8 @@ class APIViewModel: ObservableObject {
         
         // ここにローカルデータのフェッチ
         Task {
-           
+            let result = LocalService().loadResults()
+            resultList = result
         }
     }
     

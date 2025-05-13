@@ -34,20 +34,22 @@ struct LocalService {
     }
     
     // MARK: - 読み込み
-    func loadResult() -> ResultModel? {
-        guard let result = realm.objects(Result.self).first else { return nil }
+    func loadResults() -> [ResultModel] {
+        let results = realm.objects(Result.self)
 
-        // JSONからHarryPotterModelにデコード
-        var model: HarryPotterModel? = nil
-        if let json = result.harryPotterJSON,
-           let data = json.data(using: .utf8) {
-            model = try? JSONDecoder().decode(HarryPotterModel.self, from: data)
+        return results.compactMap { result in
+            // JSONからHarryPotterModelにデコード
+            var model: HarryPotterModel? = nil
+            if let json = result.harryPotterJSON,
+               let data = json.data(using: .utf8) {
+                model = try? JSONDecoder().decode(HarryPotterModel.self, from: data)
+            }
+
+            // ファイル名からUIImageを読み込み
+            let image = loadImage(fileName: result.user_image)
+
+            return ResultModel(id: result.id, harryPotter: model, userImage: image)
         }
-
-        // ファイル名からUIImageに変換
-        let image = loadImage(fileName: result.user_image)
-
-        return ResultModel(id: result.id, harryPotter: model, userImage: image)
     }
     
     // MARK: - UIImageをファイル保存
