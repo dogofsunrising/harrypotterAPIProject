@@ -50,7 +50,7 @@ struct LocalService {
 
             let image = loadImage(fileName: raw.imageFileName)
 
-            return ResultModel(id: raw.id, harryPotter: model, userImage: image,userFacefeature:  nil)
+            return ResultModel(id: raw.id, harryPotter: model, userImage: image)
         }
     }
 
