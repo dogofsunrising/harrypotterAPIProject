@@ -1,17 +1,9 @@
 import SwiftUI
 import UIKit
 
-struct OOCameraView :View {
-    @Binding var router:Router
-    var body: some View {
-        VStack {
-            CameraView(router: $router)
-        }
-    }
-}
-
 struct CameraView: UIViewControllerRepresentable {
     @Binding var router:Router
+    @ObservedObject var viewModel: APIViewModel
     @Environment(\.presentationMode) var presentationMode
 
     func makeUIViewController(context: Context) -> UIImagePickerController {

@@ -15,7 +15,7 @@ struct RouterViews: View {
             case .launch:
                 LaunchView(router: $router,results: viewModel.resultList)
             case .camera:
-                OOCameraView(router: $router)
+                CameraView(router: $router,viewModel: viewModel)
             }
         }
         .onAppear{
