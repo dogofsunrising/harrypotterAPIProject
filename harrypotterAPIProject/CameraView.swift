@@ -35,8 +35,6 @@ struct CameraView: UIViewControllerRepresentable {
 
                 // ✅ viewModelに反映
                 parent.viewModel.resultList = LocalService().loadResults()
-                parent.presentationMode.wrappedValue.dismiss()
-                parent.router = .launch
             }
             parent.presentationMode.wrappedValue.dismiss()
             parent.router = .launch

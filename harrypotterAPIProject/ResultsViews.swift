@@ -7,7 +7,7 @@ struct ResultsViews: View {
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(results, id: \.id) { result in
+                ForEach(results.reversed(), id: \.id) { result in
                     ResultView(result: result)
                         .padding()
                         .background(Color(.systemGray6))
@@ -30,7 +30,6 @@ struct ResultView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 100, height: 100)
-                        .clipShape(Circle())
                 }
 
                 if let urlString = result.harryPotter?.image,
