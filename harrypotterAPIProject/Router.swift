@@ -9,14 +9,14 @@ enum Router {
 struct RouterViews: View {
     @State private var router: Router = .launch // ← 状態管理
     @StateObject var viewModel = APIViewModel()
-    @State var image: UIImage?
+    @State var result: ResultModel?
     var body : some View {
         ZStack {
             switch router {
             case .launch:
                 LaunchView(router: $router)
             case .camera:
-                OOCameraView(router: $router, image: $image)
+                OOCameraView(router: $router)
             }
         }
         .onAppear{

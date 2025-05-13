@@ -3,16 +3,14 @@ import UIKit
 
 struct OOCameraView :View {
     @Binding var router:Router
-    @Binding var image: UIImage?
     var body: some View {
         VStack {
-            CameraView(image: $image,router: $router)
+            CameraView(router: $router)
         }
     }
 }
 
 struct CameraView: UIViewControllerRepresentable {
-    @Binding var image: UIImage?
     @Binding var router:Router
     @Environment(\.presentationMode) var presentationMode
 
@@ -40,7 +38,8 @@ struct CameraView: UIViewControllerRepresentable {
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let pickedImage = info[.originalImage] as? UIImage {
-                parent.image = pickedImage
+                parent.presentationMode.wrappedValue.dismiss()
+                parent.router = .launch
             }
             parent.presentationMode.wrappedValue.dismiss()
             parent.router = .launch
