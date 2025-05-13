@@ -1,7 +1,7 @@
-import Foundation
+import UIKit
 
-struct ResultModel: Codable, Identifiable {
+struct ResultModel{
     let id: String
-    let harrypoter: HarryPotterModel?
-    let user_image: String
+    let harryPotter: HarryPotterModel?
+    let userImage: UIImage?
 }
