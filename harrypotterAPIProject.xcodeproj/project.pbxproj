@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5435F6922DC4A49F003C51EE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5435F6912DC4A49F003C51EE /* Alamofire */; };
-		5435F7D32DD304EB003C51EE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5435F7D22DD304EB003C51EE /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5435F7D32DD304EB003C51EE /* RealmSwift in Frameworks */,
 				5435F6922DC4A49F003C51EE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,7 +108,6 @@
 			name = harrypotterAPIProject;
 			packageProductDependencies = (
 				5435F6912DC4A49F003C51EE /* Alamofire */,
-				5435F7D22DD304EB003C51EE /* RealmSwift */,
 			);
 			productName = harrypotterAPIProject;
 			productReference = 5435F6792DC483A0003C51EE /* harrypotterAPIProject.app */;
@@ -142,7 +139,6 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				5435F6902DC4A49F003C51EE /* XCRemoteSwiftPackageReference "Alamofire" */,
-				5435F7D12DD304EB003C51EE /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5435F67A2DC483A0003C51EE /* Products */;
@@ -402,14 +398,6 @@
 				minimumVersion = 5.10.2;
 			};
 		};
-		5435F7D12DD304EB003C51EE /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -417,11 +405,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5435F6902DC4A49F003C51EE /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		5435F7D22DD304EB003C51EE /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5435F7D12DD304EB003C51EE /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
