@@ -39,6 +39,7 @@ struct CameraView: UIViewControllerRepresentable {
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let pickedImage = info[.originalImage] as? UIImage {
                 LocalService().storeResult(ResultModel(id: "aaa", harryPotter: sampleHarryPotterModel, userImage: pickedImage))
+                
                 parent.presentationMode.wrappedValue.dismiss()
                 parent.router = .launch
             }
