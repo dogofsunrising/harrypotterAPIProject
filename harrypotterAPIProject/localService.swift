@@ -27,8 +27,15 @@ struct LocalService {
                             harryPotterJSON: harryPotterJSON,
                             imageFileName: fileName)
 
-        // 既存 + 追加
-        savedResults.removeAll { $0.id == raw.id } // 上書き用
+        // 上書き用に古い同一IDは除去
+        savedResults.removeAll { $0.id == raw.id }
+
+        // 最大10件制限 → 古い順に削除
+        while savedResults.count >= 10 {
+            savedResults.removeFirst() // 一番古いものを削除
+        }
+
+        // 新しい結果を追加
         savedResults.append(raw)
 
         // 保存
@@ -36,6 +43,7 @@ struct LocalService {
             UserDefaults.standard.set(data, forKey: userDefaultsKey)
         }
     }
+
 
     // 読み込み
     func loadResults() -> [ResultModel] {
